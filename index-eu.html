@@ -623,6 +623,25 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
   .aviso-idioma { padding: 8px 20px; }
 }
 @media (pointer: coarse) { .idiomas a { min-height: 44px; display: inline-flex; align-items: center; } }
+
+/* Presentación del portal en la portada */
+.intro-pua { margin-bottom: 22px; }
+.intro-pua h2 { margin-bottom: 12px; }
+.intro-pua > p { font-size: 17px; line-height: 1.6; color: var(--gob-texto); margin-bottom: 14px; }
+.intro-mas { background: #fff; border: 1px solid var(--gob-gris-border); border-radius: 12px; }
+.intro-mas summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 16px; font-size: 16px; font-weight: 700; color: var(--gob-azul); border-radius: 12px; }
+.intro-mas summary::-webkit-details-marker { display: none; }
+.intro-mas summary::after { content: ""; flex: none; width: 9px; height: 9px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s ease; }
+.intro-mas[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+.intro-mas summary:hover { background: var(--gob-azul-light); }
+.intro-mas summary:focus-visible { outline: 2px solid var(--gob-azul); outline-offset: 2px; }
+.intro-mas-cuerpo { padding: 2px 18px 16px; border-top: 1px solid var(--gob-gris-border); }
+.intro-mas h3 { font-size: 17px; color: var(--gob-azul-dark); margin: 14px 0 8px; }
+.intro-mas ul, .intro-mas ol { margin: 0; padding-left: 22px; }
+.intro-mas li { font-size: 16px; line-height: 1.55; color: var(--gob-texto); margin-bottom: 8px; }
+.intro-mas li::marker { color: var(--gob-azul); font-weight: 700; }
+.intro-nota { font-size: 14px; color: var(--gob-gris-muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
+@media (prefers-reduced-motion: reduce) { .intro-mas summary::after { transition: none; } }
 </style>
 </head>
 <body>
@@ -658,6 +677,31 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
       <div class="banner-hero entrada" style="--i:0">
         <img src="banner-ayudas.webp" alt="" width="1600" height="228" decoding="async">
       </div>
+      <section class="intro-pua entrada" style="--i:0" aria-labelledby="intro-tit">
+        <h2 id="intro-tit">Aurkitu dagozkizukeen laguntza publikoak</h2>
+        <p>Laguntzen Atari Bakarrak leku bakarrean biltzen ditu Estatuko Administrazio Orokorraren, autonomia-erkidegoen eta toki-erakundeen laguntzak, diru-laguntzak eta prestazioak. Gaur egun informazio hori hainbat administrazioren aldizkari ofizialetan eta egoitza elektronikoetan sakabanatuta dago. Hemen leku berean kontsulta dezakezu, zure egoera pertsonalaren edo zure enpresaren egoeraren arabera.</p>
+        <details class="intro-mas">
+          <summary>Zer eskaintzen dizun atariak eta nola funtzionatzen duen</summary>
+          <div class="intro-mas-cuerpo">
+            <h3>Zer eskaintzen dizu</h3>
+            <ul>
+            <li><strong>Kontsulta bakarra hiru administrazioetarako.</strong> Zure egoerari buruzko galdera batzuk erantzuten dituzu, eta atariak egoera horrekin bat datozen estatuko, autonomia-erkidegoko eta tokiko laguntzak erakusten dizkizu.</li>
+            <li><strong>Iturri ofizialetako informazioa.</strong> Fitxa bakoitza Diru-laguntzen Datu Base Nazionaletik eta aldizkari ofizialetatik dator. Erakundea, zenbatekoa, betekizunak, epeak eta deialdia indarrean dagoen adierazten ditu.</li>
+            <li><strong>Identifikatu beharrik gabe.</strong> Kontsultatzeko ez da Cl@ve edo ziurtagiri digitalik behar. Identifikazioa erakundearen egoitzan eskaera aurkeztean baino ez da eskatzen.</li>
+            <li><strong>Deialdi berrien abisuak.</strong> Nahi baduzu, alerta-zerbitzuan alta eman dezakezu, eta abisu bat jasoko duzu zure egoerarekin bat datorren laguntza bat argitaratzen denean.</li>
+            <li><strong>Hizkuntza ofizialetan.</strong> Ataria castellano, català, galego, euskara eta valencià hizkuntzetan dago eskuragarri.</li>
+            </ul>
+            <h3>Nola funtzionatzen du</h3>
+            <ol>
+            <li>Adierazi pertsona fisiko gisa edo enpresa edo autonomo gisa kontsultatzen duzun.</li>
+            <li>Erantzun galdetegia. Minutu batzuk dira, eta edozein urratsetan atzera egin dezakezu.</li>
+            <li>Berrikusi proposatutako laguntzak, betekizun eta epeekin.</li>
+            <li>Laguntza bat eskatzeko, sakatu bere fitxako esteka. Laguntza kudeatzen duen erakundearen egoitza elektronikora eramango zaitu; han aurkezten eta izapidetzen da eskaera.</li>
+            </ol>
+            <p class="intro-nota">Emaitza orientagarria da. Laguntza bakoitzaren deialdia egiten duen erakundeak egiaztatzen ditu betekizunak eta ebazten du eskaera.</p>
+          </div>
+        </details>
+      </section>
       <div class="cat-stats entrada" id="cat-stats" aria-live="polite" style="--i:0">
         <p class="cat-stats-tit">Prototipo honen erakustaldi-katalogoa</p>
         <div class="cat-stats-grid">

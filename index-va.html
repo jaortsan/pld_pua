@@ -623,6 +623,25 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
   .aviso-idioma { padding: 8px 20px; }
 }
 @media (pointer: coarse) { .idiomas a { min-height: 44px; display: inline-flex; align-items: center; } }
+
+/* Presentación del portal en la portada */
+.intro-pua { margin-bottom: 22px; }
+.intro-pua h2 { margin-bottom: 12px; }
+.intro-pua > p { font-size: 17px; line-height: 1.6; color: var(--gob-texto); margin-bottom: 14px; }
+.intro-mas { background: #fff; border: 1px solid var(--gob-gris-border); border-radius: 12px; }
+.intro-mas summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 16px; font-size: 16px; font-weight: 700; color: var(--gob-azul); border-radius: 12px; }
+.intro-mas summary::-webkit-details-marker { display: none; }
+.intro-mas summary::after { content: ""; flex: none; width: 9px; height: 9px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s ease; }
+.intro-mas[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+.intro-mas summary:hover { background: var(--gob-azul-light); }
+.intro-mas summary:focus-visible { outline: 2px solid var(--gob-azul); outline-offset: 2px; }
+.intro-mas-cuerpo { padding: 2px 18px 16px; border-top: 1px solid var(--gob-gris-border); }
+.intro-mas h3 { font-size: 17px; color: var(--gob-azul-dark); margin: 14px 0 8px; }
+.intro-mas ul, .intro-mas ol { margin: 0; padding-left: 22px; }
+.intro-mas li { font-size: 16px; line-height: 1.55; color: var(--gob-texto); margin-bottom: 8px; }
+.intro-mas li::marker { color: var(--gob-azul); font-weight: 700; }
+.intro-nota { font-size: 14px; color: var(--gob-gris-muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
+@media (prefers-reduced-motion: reduce) { .intro-mas summary::after { transition: none; } }
 </style>
 </head>
 <body>
@@ -658,6 +677,31 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
       <div class="banner-hero entrada" style="--i:0">
         <img src="banner-ayudas.webp" alt="" width="1600" height="228" decoding="async">
       </div>
+      <section class="intro-pua entrada" style="--i:0" aria-labelledby="intro-tit">
+        <h2 id="intro-tit">Trobe les ajudes públiques que li poden correspondre</h2>
+        <p>El Portal Únic d'Ajudes reunix en un sol punt les ajudes, subvencions i prestacions de l'Administració General de l'Estat, de les comunitats autònomes i de les entitats locals. Hui esta informació està repartida entre butlletins oficials i seus electròniques de diferents administracions. Ací la pot consultar en un mateix lloc, a partir de la seua situació personal o de la de la seua empresa.</p>
+        <details class="intro-mas">
+          <summary>Què li oferix el portal i com funciona</summary>
+          <div class="intro-mas-cuerpo">
+            <h3>Què li oferix</h3>
+            <ul>
+            <li><strong>Una sola consulta per a les tres administracions.</strong> Respon unes preguntes sobre la seua situació i el portal li mostra les ajudes estatals, autonòmiques i locals que hi encaixen.</li>
+            <li><strong>Informació de fonts oficials.</strong> Cada fitxa prové de la Base de Dades Nacional de Subvencions i dels butlletins oficials. Indica l'organisme, la quantia, els requisits, els terminis i si la convocatòria està vigent.</li>
+            <li><strong>Sense necessitat d'identificar-se.</strong> Per a consultar no cal Cl@ve ni certificat digital. La identificació només es demana en presentar la sol·licitud en la seu de l'organisme.</li>
+            <li><strong>Avisos de noves convocatòries.</strong> Si ho vol, pot donar-se d'alta en el servici d'alertes i rebre un avís quan es publique una ajuda que encaixe amb la seua situació.</li>
+            <li><strong>En les llengües oficials.</strong> El portal està disponible en castellano, català, galego, euskara i valencià.</li>
+            </ul>
+            <h3>Com funciona</h3>
+            <ol>
+            <li>Indique si consulta com a persona física o com a empresa o autònom.</li>
+            <li>Responga el qüestionari. Són uns minuts i pot tornar arrere en qualsevol pas.</li>
+            <li>Revise les ajudes proposades, amb els requisits i els terminis.</li>
+            <li>Per a sol·licitar una ajuda, polse l'enllaç de la fitxa. El portarà a la seu electrònica de l'organisme que la gestiona, on es presenta i es tramita la sol·licitud.</li>
+            </ol>
+            <p class="intro-nota">El resultat és orientatiu. L'organisme que convoca cada ajuda és qui comprova els requisits i resol la sol·licitud.</p>
+          </div>
+        </details>
+      </section>
       <div class="cat-stats entrada" id="cat-stats" aria-live="polite" style="--i:0">
         <p class="cat-stats-tit">Catàleg de demostració d'este prototip</p>
         <div class="cat-stats-grid">

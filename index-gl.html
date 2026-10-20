@@ -623,6 +623,25 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
   .aviso-idioma { padding: 8px 20px; }
 }
 @media (pointer: coarse) { .idiomas a { min-height: 44px; display: inline-flex; align-items: center; } }
+
+/* Presentación del portal en la portada */
+.intro-pua { margin-bottom: 22px; }
+.intro-pua h2 { margin-bottom: 12px; }
+.intro-pua > p { font-size: 17px; line-height: 1.6; color: var(--gob-texto); margin-bottom: 14px; }
+.intro-mas { background: #fff; border: 1px solid var(--gob-gris-border); border-radius: 12px; }
+.intro-mas summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 16px; font-size: 16px; font-weight: 700; color: var(--gob-azul); border-radius: 12px; }
+.intro-mas summary::-webkit-details-marker { display: none; }
+.intro-mas summary::after { content: ""; flex: none; width: 9px; height: 9px; margin-top: -4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s ease; }
+.intro-mas[open] summary::after { transform: rotate(-135deg); margin-top: 4px; }
+.intro-mas summary:hover { background: var(--gob-azul-light); }
+.intro-mas summary:focus-visible { outline: 2px solid var(--gob-azul); outline-offset: 2px; }
+.intro-mas-cuerpo { padding: 2px 18px 16px; border-top: 1px solid var(--gob-gris-border); }
+.intro-mas h3 { font-size: 17px; color: var(--gob-azul-dark); margin: 14px 0 8px; }
+.intro-mas ul, .intro-mas ol { margin: 0; padding-left: 22px; }
+.intro-mas li { font-size: 16px; line-height: 1.55; color: var(--gob-texto); margin-bottom: 8px; }
+.intro-mas li::marker { color: var(--gob-azul); font-weight: 700; }
+.intro-nota { font-size: 14px; color: var(--gob-gris-muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
+@media (prefers-reduced-motion: reduce) { .intro-mas summary::after { transition: none; } }
 </style>
 </head>
 <body>
@@ -658,6 +677,31 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
       <div class="banner-hero entrada" style="--i:0">
         <img src="banner-ayudas.webp" alt="" width="1600" height="228" decoding="async">
       </div>
+      <section class="intro-pua entrada" style="--i:0" aria-labelledby="intro-tit">
+        <h2 id="intro-tit">Atope as axudas públicas que lle poden corresponder</h2>
+        <p>O Portal Único de Axudas reúne nun só punto as axudas, subvencións e prestacións da Administración Xeral do Estado, das comunidades autónomas e das entidades locais. Hoxe esa información está repartida entre boletíns oficiais e sedes electrónicas de distintas administracións. Aquí pode consultala nun mesmo sitio, a partir da súa situación persoal ou da da súa empresa.</p>
+        <details class="intro-mas">
+          <summary>Que lle ofrece o portal e como funciona</summary>
+          <div class="intro-mas-cuerpo">
+            <h3>Que lle ofrece</h3>
+            <ul>
+            <li><strong>Unha soa consulta para as tres administracións.</strong> Responde unhas preguntas sobre a súa situación e o portal móstralle as axudas estatais, autonómicas e locais que encaixan con ela.</li>
+            <li><strong>Información de fontes oficiais.</strong> Cada ficha procede da Base de Datos Nacional de Subvencións e dos boletíns oficiais. Indica o organismo, a contía, os requisitos, os prazos e se a convocatoria está vixente.</li>
+            <li><strong>Sen necesidade de identificarse.</strong> Para consultar non fai falta Cl@ve nin certificado dixital. A identificación só se pide ao presentar a solicitude na sede do organismo.</li>
+            <li><strong>Avisos de novas convocatorias.</strong> Se o desexa, pode darse de alta no servizo de alertas e recibir un aviso cando se publique unha axuda que encaixe coa súa situación.</li>
+            <li><strong>Nas linguas oficiais.</strong> O portal está dispoñible en castellano, català, galego, euskara e valencià.</li>
+            </ul>
+            <h3>Como funciona</h3>
+            <ol>
+            <li>Indique se consulta como persoa física ou como empresa ou autónomo.</li>
+            <li>Responda o cuestionario. Son uns minutos e pode volver atrás en calquera paso.</li>
+            <li>Revise as axudas propostas, cos seus requisitos e prazos.</li>
+            <li>Para solicitar unha axuda, prema a ligazón da súa ficha. Levarao á sede electrónica do organismo que a xestiona, onde se presenta e se tramita a solicitude.</li>
+            </ol>
+            <p class="intro-nota">O resultado é orientativo. O organismo que convoca cada axuda é quen comproba os requisitos e resolve a solicitude.</p>
+          </div>
+        </details>
+      </section>
       <div class="cat-stats entrada" id="cat-stats" aria-live="polite" style="--i:0">
         <p class="cat-stats-tit">Catálogo de demostración deste prototipo</p>
         <div class="cat-stats-grid">
