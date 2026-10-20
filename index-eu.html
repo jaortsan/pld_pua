@@ -2,6 +2,7 @@
 <html lang="eu">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laguntzen Atari Bakarra — «Zure laguntza, zure eskura»</title>
 <link rel="alternate" hreflang="es" href="index.html">
@@ -642,6 +643,22 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
 .intro-mas li::marker { color: var(--gob-azul); font-weight: 700; }
 .intro-nota { font-size: 14px; color: var(--gob-gris-muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
 @media (prefers-reduced-motion: reduce) { .intro-mas summary::after { transition: none; } }
+
+/* Aviso de prototipo y aviso legal */
+.aviso-prototipo { background: #FDF1C7; color: #3d2e00; border-bottom: 1px solid #E3C567; font-size: 14px; line-height: 1.45; }
+.aviso-prototipo p { margin: 0; padding: 8px 40px; }
+.aviso-prototipo a { color: #3d2e00; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.aviso-prototipo a:hover { text-decoration-thickness: 2px; }
+.aviso-prototipo a:focus-visible { outline: 2px solid #3d2e00; outline-offset: 2px; border-radius: 2px; }
+.al-cuerpo { font-size: 15px; color: var(--gob-texto); line-height: 1.6; }
+.al-cuerpo h4 { color: var(--gob-azul); font-size: 17px; margin: 16px 0 4px; scroll-margin-top: 12px; }
+.al-cuerpo h4:first-child { margin-top: 4px; }
+.al-cuerpo p { margin: 0 0 8px; }
+.al-cuerpo a { color: var(--gob-azul-dark); font-weight: 700; word-break: break-word; }
+.al-act { font-size: 13px; color: var(--gob-gris-muted); margin-top: 14px !important; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
+@media (max-width: 640px) { .aviso-prototipo p { padding: 8px 20px; } }
+
+.footer-bottom > span > a[href="#aviso-legal"] { color: var(--gob-azul-dark); font-weight: 700; text-underline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -659,6 +676,9 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     <li><a href="index-va.html" lang="ca-valencia" hreflang="ca-valencia">Valencià</a></li>
   </ul>
 </nav>
+<div class="aviso-prototipo" role="note">
+  <p><strong>Baliozkotasun juridikorik gabeko prototipo akademikoa.</strong> Webgune hau ez da Ogasun Ministerioaren ezta beste inongo administrazio publikoren zerbitzu bat. <a href="#aviso-legal" onclick="return abrirAvisoLegal()">Ikusi lege-oharra</a></p>
+</div>
 
 <header class="header" role="banner">
   <img src="MHACGob.png" alt="Espainiako Gobernua — Ogasun Ministerioa" class="header-logo-oficial">
@@ -1128,9 +1148,9 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     <div class="footer-col">
       <h4>Lege-informazioa</h4>
       <ul>
-        <li><a href="#">Lege-oharra</a></li>
-        <li><a href="#">Pribatutasun-politika</a></li>
-        <li><a href="#">Cookie-politika</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal()">Lege-oharra</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal('al-privacidad')">Pribatutasun-politika</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal('al-privacidad')">Cookie-politika</a></li>
         <li><a href="#" onclick="abrirAccesibilidad(); return false;">Irisgarritasun-adierazpena</a></li>
       </ul>
     </div>
@@ -1146,7 +1166,7 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© Espainiako Gobernua — <strong>Laguntzen Atari Bakarra</strong></span>
+    <span>© 2026 <strong>Laguntzen Atari Bakarra</strong> · <a href="#aviso-legal" onclick="return abrirAvisoLegal()">Baliozkotasun juridikorik gabeko prototipo akademikoa</a></span>
     <span class="footer-wcag">
       <span class="wcag-badge" aria-hidden="true">AA</span>
       Bat dator <a href="#" onclick="abrirAccesibilidad(); return false;">WCAG 2.1 AA mailarekin</a> eta 1112/2018 Errege Dekretuarekin
@@ -1235,13 +1255,47 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
       <p>Webgune hau <strong>bat dator</strong> <strong>UNE-EN 301549:2022</strong> arauarekin (<strong>WCAG 2.1 AA mailaren</strong> baliokidea), hurrengo atalean adierazitako salbuespenak salbu.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Eduki ez-irisgarria</h4>
-      <p>Erakustaldi-prototipo bat denez, orri-oineko lege- eta araudi-informazioko estekak benetako helmugarik gabeko leku-markak dira, orri horiek ez baitira pilotuaren parte. Formularioko hautapen-kontrolak ARIA semantika duten elementu generikoekin eraikita daude, teklatuaren euskarri osoarekin eta geziekin nabigatzeko aukerarekin; ekoizpen-bertsioak formularioko kontrol natiboekin ordeztuko ditu.</p>
+      <p>Erakustaldi-prototipo bat denez, orri-oineko araudi-informazioko estekak benetako helmugarik gabeko leku-markak dira, orri horiek ez baitira pilotuaren parte. Formularioko hautapen-kontrolak ARIA semantika duten elementu generikoekin eraikita daude, teklatuaren euskarri osoarekin eta geziekin nabigatzeko aukerarekin; ekoizpen-bertsioak formularioko kontrol natiboekin ordeztuko ditu.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Adierazpenaren prestaketa</h4>
       <p>Adierazpena 2026ko uztailaren 27an berrikusi zen, <strong>autoebaluazio</strong> bidez. Egiaztatu dira etiketen eta eremuen arteko lotura, aukeren taldekatze semantikoa, goiburuen hierarkia, testuaren kontrastea (gutxienez 4,5:1) eta interfaze-osagaiena (gutxienez 3:1), fokuaren ikusgarritasuna, teklatu bidezko erabilera osoa, testu alternatiboak, testuaren tamaina aldatzea eta pantaila txikietara egokitzea.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Oharrak eta harremana</h4>
       <p>Irisgarritasun-arazoren bat jakinarazi edo informazioa formatu irisgarrian eskatu dezakezu helbide honen bidez: <strong>soporte@ayudas.administracion.gob.es</strong>. Erantzunik jasotzen ez baduzu, erreklamazioa aurkeztu ahal izango duzu 1112/2018 EDan aurreikusitako prozeduraren arabera.</p>
+    </div>
+  </div>
+</div>
+
+<div class="faq-overlay" id="al-overlay" onclick="if(event.target===this) cerrarAvisoLegal()">
+  <div class="faq-modal" role="dialog" aria-modal="true" aria-labelledby="al-title">
+    <div class="faq-modal-head">
+      <h3 id="al-title">Lege-oharra</h3>
+      <button class="faq-close" id="al-cerrar" onclick="cerrarAvisoLegal()" aria-label="Itxi lege-oharra">✕</button>
+    </div>
+    <div class="al-cuerpo">
+      <h4 id="al-naturaleza">Webgune honen izaera</h4>
+      <p>Webgune hau prototipo akademiko bat da. Ikasle talde batek egin du, Lidergo Digitaleko Programaren IV. edizioko (2026) amaierako lan gisa; programa Instituto de Estudios Fiscalesek eta Escuela de Organización Industrialek ematen dute. Bere helburu bakarra da erakustea, prestakuntza- eta ebaluazio-helburuekin, nola funtziona lezakeen laguntzei buruzko orientazio-zerbitzu publiko digital batek.</p>
+      <p>Ez da Ogasun Ministerioaren, Estatuko Administrazio Orokorraren edo beste inongo administrazio publikoren atari ofiziala, egoitza elektronikoa edo zerbitzua.</p>
+      <h4 id="al-validez">Baliozkotasun juridikorik eta lotura instituzionalik gabe</h4>
+      <p>Edukiak ez du baliozkotasun juridikorik eta ez du ondorio administratiborik sortzen. Ez da inongo organo edo erakunde publikoren informazio ofiziala, komunikazioa, egintza edo konpromisoa, eta ez du sortzen laguntzarik lortzeko eskubiderik edo itxaropenik.</p>
+      <p>Prototipoak ez du ordezkatzen eta ez dago lotuta Ogasun Ministerioaren, Instituto de Estudios Fiscalesen, Escuela de Organización Industrialen edo beste inongo administrazioren programa, plan, prozedura, proiektu edo politikarekin. Bertan jasotako proposamenak eta diseinuak egileen erantzukizun hutsa dira; ikasle gisa garatu dute, eta ez dute islatzen lan egiten duten erakundeen jarrera.</p>
+      <p>Webgune hau erabiltzeak ez du administrazio-prozedurarik hasten, eta ez da eskaera bat aurkeztearen baliokidea. Eskaerak erakunde eskudunaren aurrean baino ezin dira aurkeztu, Administrazio Publikoen Administrazio Prozedura Erkideari buruzko urriaren 1eko 39/2015 Legearen 16. artikuluan aurreikusitako bideen bidez.</p>
+      <h4 id="al-ayudas">Laguntzei buruzko informazioa</h4>
+      <p>Fitxek 22 laguntzaz osatutako erakustaldi-katalogo bat osatzen dute, ilustrazio-helburuekin hautatuak. Edukia laburtuta, osatu gabe edo eguneratu gabe egon daiteke, eta ez ditu ordezten aldizkari ofizialetan argitaratutako oinarri arautzaileak eta deialdiak; horiek dira balio ofiziala duten bakarrak. Orientazio-motorraren emaitza informatiboa baino ez da; betekizunak betetzen diren ala ez deialdia egiten duen erakundeak erabakitzen du kasu bakoitzean.</p>
+      <p>Datuak sektore publikoaren informaziotik datoz (Estatuko Aldizkari Ofiziala, autonomia-erkidegoetako aldizkari ofizialak, Diru-laguntzen Datu Base Nazionala eta erakunde kudeatzaileen egoitza elektronikoak), eta sektore publikoaren informazioa berrerabiltzeari buruzko azaroaren 16ko 37/2007 Legearen eta urriaren 24ko 1495/2011 Errege Dekretuaren arabera berrerabiltzen dira. Fitxa bakoitzak jatorrizko erakundea eta eskuragarri dauden argitalpen-datak adierazten ditu. Informazio horren titular den erakundeetako batek ere ez du parte hartzen prototipo honetan, eta ez du babesten edo sustatzen.</p>
+      <h4 id="al-enlaces">Beste webguneetarako estekak</h4>
+      <p>Prototipoak erakunde publikoen egoitza elektronikoetarako eta orrietarako estekak ditu, kontsulta errazteko. Egileek ez dituzte webgune horiek kontrolatzen eta ez dira haien edukiaren erantzule, informazioaren gizartearen zerbitzuei eta merkataritza elektronikoari buruzko uztailaren 11ko 34/2002 Legearen 17. artikuluaren arabera. Estekaren batek eduki legez kontrako edo desegoki batera eramango balu, horren berri izan bezain laster kenduko da.</p>
+      <h4 id="al-imagen">Irudi instituzionala eta harremanetarako datuak</h4>
+      <p>Maketan agertzen diren administrazio publikoen izenak, logotipoak eta irudi instituzionaleko elementuak benetako zerbitzu batek izango lukeen itxura simulatzeko baino ez dira erabiltzen, deskribatutako testuinguru akademikoan. Horiek agertzeak ez du esan nahi titularrek baimena eman dutenik, babesten dutenik edo harremanik dagoenik. Titularretako batek erabilera hori desegokitzat jotzen badu, eragindako elementuak kenduko dira jakinarazpena jaso bezain laster.</p>
+      <p>Orri-oinean eta irisgarritasun-adierazpenean agertzen diren telefonoak, helbideak eta posta elektronikoak ilustratiboak dira, eta ez dute prototipo honi buruzko kontsultarik artatzen.</p>
+      <h4 id="al-privacidad">Datuen babesa eta cookieak</h4>
+      <p>Prototipoak ez du datu pertsonalik biltzen, gordetzen edo transmititzen. Formularioetan idazten dena nabigatzailean baino ez da prozesatzen, eta orria ixtean edo berriz kargatzean galdu egiten da. Webguneak ez du cookierik, tokiko biltegiratzerik edo analitika- edo publizitate-tresnarik erabiltzen.</p>
+      <p>Bi hornitzaile teknikok trata ditzakete konexio-datuak. GitHub, Inc.-ek GitHub Pages bidez ostatatzen du webgunea, eta bisitarien IP helbidea erregistratzen du segurtasun-arrazoiengatik. Googlek Google Fonts bidez ematen du tipografia, eta nabigatzailearen IP helbidea jasotzen du hura deskargatzean. Tratamendu horiek hornitzaile bakoitzaren pribatutasun-politiken mende daude.</p>
+      <h4 id="al-responsabilidad">Erantzukizuna</h4>
+      <p>Egileak ez dira prototipo honen edukian oinarrituta hartzen diren erabakien erantzule, ezta haren erabileratik etor litezkeen kalteen erantzule ere. Benetako izapideetarako, kontsultatu erakunde eskudunaren egoitza elektronikoa edo Estatuko Administrazio Orokorraren 060 informazio-telefonoa.</p>
+      <h4 id="al-contacto">Harremana</h4>
+      <p>Prototipo honi buruzko edozein komunikaziotarako, edukiak kentzeko eskaerak barne, egileekin harremanetan jar zaitezke proiektuak GitHuben duen biltegi publikoaren bidez (<a href="https://github.com/jaortsan/pld_pua" target="_blank" rel="noopener noreferrer">github.com/jaortsan/pld_pua</a>).</p>
+      <p class="al-act">Azken eguneratzea: 2026ko urriaren 20a.</p>
     </div>
   </div>
 </div>
@@ -2551,6 +2605,28 @@ document.addEventListener('keydown', e => {
 /* Modal de Declaración de Accesibilidad (RD 1112/2018) */
 function abrirAccesibilidad() { document.getElementById('acc-overlay').classList.add('act'); }
 function cerrarAccesibilidad() { document.getElementById('acc-overlay').classList.remove('act'); }
+
+/* Aviso legal: apertura con foco gestionado y enlace directo por #aviso-legal */
+let alFocoPrevio = null;
+function abrirAvisoLegal(seccion) {
+  alFocoPrevio = document.activeElement;
+  const ov = document.getElementById('al-overlay');
+  ov.classList.add('act');
+  const destino = seccion ? document.getElementById(seccion) : null;
+  setTimeout(() => {
+    document.getElementById('al-cerrar').focus();
+    if (destino) destino.scrollIntoView({ block: 'start' });
+  }, 30);
+  return false;
+}
+function cerrarAvisoLegal() {
+  const ov = document.getElementById('al-overlay');
+  if (!ov || !ov.classList.contains('act')) return;
+  ov.classList.remove('act');
+  if (alFocoPrevio && alFocoPrevio.focus) alFocoPrevio.focus();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarAvisoLegal(); });
+if (location.hash === '#aviso-legal') abrirAvisoLegal();
 </script>
 </body>
 </html>

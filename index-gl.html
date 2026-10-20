@@ -2,6 +2,7 @@
 <html lang="gl">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal Único de Axudas — «A túa axuda ao teu alcance»</title>
 <link rel="alternate" hreflang="es" href="index.html">
@@ -642,6 +643,22 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
 .intro-mas li::marker { color: var(--gob-azul); font-weight: 700; }
 .intro-nota { font-size: 14px; color: var(--gob-gris-muted); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
 @media (prefers-reduced-motion: reduce) { .intro-mas summary::after { transition: none; } }
+
+/* Aviso de prototipo y aviso legal */
+.aviso-prototipo { background: #FDF1C7; color: #3d2e00; border-bottom: 1px solid #E3C567; font-size: 14px; line-height: 1.45; }
+.aviso-prototipo p { margin: 0; padding: 8px 40px; }
+.aviso-prototipo a { color: #3d2e00; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.aviso-prototipo a:hover { text-decoration-thickness: 2px; }
+.aviso-prototipo a:focus-visible { outline: 2px solid #3d2e00; outline-offset: 2px; border-radius: 2px; }
+.al-cuerpo { font-size: 15px; color: var(--gob-texto); line-height: 1.6; }
+.al-cuerpo h4 { color: var(--gob-azul); font-size: 17px; margin: 16px 0 4px; scroll-margin-top: 12px; }
+.al-cuerpo h4:first-child { margin-top: 4px; }
+.al-cuerpo p { margin: 0 0 8px; }
+.al-cuerpo a { color: var(--gob-azul-dark); font-weight: 700; word-break: break-word; }
+.al-act { font-size: 13px; color: var(--gob-gris-muted); margin-top: 14px !important; padding-top: 10px; border-top: 1px dashed var(--gob-gris-border); }
+@media (max-width: 640px) { .aviso-prototipo p { padding: 8px 20px; } }
+
+.footer-bottom > span > a[href="#aviso-legal"] { color: var(--gob-azul-dark); font-weight: 700; text-underline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -659,6 +676,9 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     <li><a href="index-va.html" lang="ca-valencia" hreflang="ca-valencia">Valencià</a></li>
   </ul>
 </nav>
+<div class="aviso-prototipo" role="note">
+  <p><strong>Prototipo académico sen validez legal.</strong> Este sitio non é un servizo do Ministerio de Facenda nin de ningunha administración pública. <a href="#aviso-legal" onclick="return abrirAvisoLegal()">Consulte o aviso legal</a></p>
+</div>
 
 <header class="header" role="banner">
   <img src="MHACGob.png" alt="Goberno de España — Ministerio de Facenda" class="header-logo-oficial">
@@ -1128,9 +1148,9 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     <div class="footer-col">
       <h4>Información legal</h4>
       <ul>
-        <li><a href="#">Aviso legal</a></li>
-        <li><a href="#">Política de privacidade</a></li>
-        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal()">Aviso legal</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal('al-privacidad')">Política de privacidade</a></li>
+        <li><a href="#aviso-legal" onclick="return abrirAvisoLegal('al-privacidad')">Política de cookies</a></li>
         <li><a href="#" onclick="abrirAccesibilidad(); return false;">Declaración de accesibilidade</a></li>
       </ul>
     </div>
@@ -1146,7 +1166,7 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© Goberno de España — <strong>Portal Único de Axudas</strong></span>
+    <span>© 2026 <strong>Portal Único de Axudas</strong> · <a href="#aviso-legal" onclick="return abrirAvisoLegal()">Prototipo académico sen validez legal</a></span>
     <span class="footer-wcag">
       <span class="wcag-badge" aria-hidden="true">AA</span>
       Conforme coas <a href="#" onclick="abrirAccesibilidad(); return false;">WCAG 2.1 nivel AA</a> e co RD 1112/2018
@@ -1235,13 +1255,47 @@ form[data-dir="atras"] .fis-paso,    form[data-dir="atras"] .jur-paso    { anima
       <p>Este sitio é <strong>conforme</strong> coa norma <strong>UNE-EN 301549:2022</strong> (equivalente ás <strong>WCAG 2.1 nivel AA</strong>), sen prexuízo das excepcións que se indican no apartado seguinte.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Contido non accesible</h4>
-      <p>Ao tratarse dun prototipo de demostración, as ligazóns de información legal e normativa do pé de páxina son marcadores de posición sen destino real, xa que esas páxinas non forman parte do piloto. Os controis de selección do formulario están construídos con elementos xenéricos dotados de semántica ARIA, soporte completo de teclado e navegación con frechas; a versión de produción substituiraos por controis nativos de formulario.</p>
+      <p>Ao tratarse dun prototipo de demostración, as ligazóns de normativa do pé de páxina son marcadores de posición sen destino real, xa que esas páxinas non forman parte do piloto. Os controis de selección do formulario están construídos con elementos xenéricos dotados de semántica ARIA, soporte completo de teclado e navegación con frechas; a versión de produción substituiraos por controis nativos de formulario.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Preparación da declaración</h4>
       <p>Declaración revisada o 27 de xullo de 2026, mediante <strong>autoavaliación</strong>. Verificáronse a relación entre etiquetas e campos, a agrupación semántica das opcións, a xerarquía de cabeceiras, o contraste do texto (mínimo 4,5:1) e dos compoñentes de interface (mínimo 3:1), a visibilidade do foco, a operabilidade completa con teclado, os textos alternativos, o redimensionamento do texto e a adaptación a pantallas reducidas.</p>
 
       <h4 style="color:var(--gob-azul); font-size:17px; margin:14px 0 4px;">Observacións e contacto</h4>
       <p>Pode comunicar calquera problema de accesibilidade ou solicitar información en formato accesible a través de <strong>soporte@ayudas.administracion.gob.es</strong>. Se non obtén resposta, poderá presentar unha reclamación conforme o procedemento previsto no RD 1112/2018.</p>
+    </div>
+  </div>
+</div>
+
+<div class="faq-overlay" id="al-overlay" onclick="if(event.target===this) cerrarAvisoLegal()">
+  <div class="faq-modal" role="dialog" aria-modal="true" aria-labelledby="al-title">
+    <div class="faq-modal-head">
+      <h3 id="al-title">Aviso legal</h3>
+      <button class="faq-close" id="al-cerrar" onclick="cerrarAvisoLegal()" aria-label="Pechar o aviso legal">✕</button>
+    </div>
+    <div class="al-cuerpo">
+      <h4 id="al-naturaleza">Natureza deste sitio</h4>
+      <p>Este sitio web é un prototipo académico. Elaborouno un equipo de alumnos como traballo final da IV edición (2026) do Programa de Liderado Dixital, impartido polo Instituto de Estudos Fiscais e pola Escola de Organización Industrial. A súa única finalidade é mostrar, con obxectivos formativos e de avaliación, como podería funcionar un servizo público dixital de orientación sobre axudas.</p>
+      <p>Non é un portal oficial, unha sede electrónica nin un servizo do Ministerio de Facenda, da Administración Xeral do Estado nin de ningunha outra administración pública.</p>
+      <h4 id="al-validez">Sen validez xurídica nin vinculación institucional</h4>
+      <p>O seu contido carece de validez xurídica e non produce efectos administrativos. Non constitúe información oficial, comunicación, acto nin compromiso de ningún órgano ou entidade pública, e non xera dereitos nin expectativas de obter axuda ningunha.</p>
+      <p>O prototipo non representa nin se vincula con ningún programa, plan, procedemento, proxecto ou política do Ministerio de Facenda, do Instituto de Estudos Fiscais, da Escola de Organización Industrial nin de ningunha outra administración. As propostas e os deseños que contén son responsabilidade exclusiva dos seus autores, que o desenvolveron na súa condición de alumnos, e non reflicten a posición dos organismos nos que prestan servizo.</p>
+      <p>Utilizar esta web non inicia ningún procedemento administrativo nin equivale a presentar unha solicitude. As solicitudes só poden presentarse ante o organismo competente polos medios previstos no artigo 16 da Lei 39/2015, do 1 de outubro, do procedemento administrativo común das administracións públicas.</p>
+      <h4 id="al-ayudas">Información sobre axudas</h4>
+      <p>As fichas forman un catálogo de demostración de 22 axudas, seleccionadas con fins ilustrativos. O seu contido pode estar resumido, incompleto ou desactualizado, e non substitúe as bases reguladoras nin as convocatorias publicadas nos diarios oficiais, que son as únicas con valor oficial. O resultado do motor de orientación é meramente informativo; o cumprimento dos requisitos determínao en cada caso o organismo convocante.</p>
+      <p>Os datos proceden de información do sector público (Boletín Oficial do Estado, boletíns oficiais autonómicos, Base de Datos Nacional de Subvencións e sedes electrónicas dos organismos xestores) e reutilízanse conforme a Lei 37/2007, do 16 de novembro, sobre reutilización da información do sector público, e o Real decreto 1495/2011, do 24 de outubro. Cada ficha indica o organismo de orixe e as datas de publicación dispoñibles. Ningún dos organismos titulares desa información participa neste prototipo, o patrocina nin o apoia.</p>
+      <h4 id="al-enlaces">Ligazóns a outros sitios</h4>
+      <p>O prototipo enlaza con sedes electrónicas e páxinas de organismos públicos para facilitar a consulta. Os autores non controlan eses sitios nin responden do seu contido, conforme o artigo 17 da Lei 34/2002, do 11 de xullo, de servizos da sociedade da información e de comercio electrónico. Se algunha ligazón remitise a un contido ilícito ou inadecuado, retirarase en canto se teña coñecemento diso.</p>
+      <h4 id="al-imagen">Imaxe institucional e datos de contacto</h4>
+      <p>Os nomes, logotipos e elementos de imaxe institucional de administracións públicas que aparecen na maqueta reprodúcense só para simular o aspecto que tería un servizo real, dentro do contexto académico descrito. A súa presenza non supón autorización, respaldo nin relación ningunha cos seus titulares. Se calquera deles considera inadecuado ese uso, os elementos afectados retiraranse en canto se reciba a comunicación.</p>
+      <p>Os teléfonos, enderezos e correos que figuran no pé de páxina e na declaración de accesibilidade son ilustrativos e non atenden consultas sobre este prototipo.</p>
+      <h4 id="al-privacidad">Protección de datos e cookies</h4>
+      <p>O prototipo non recolle, conserva nin transmite datos persoais. O que se escribe nos formularios procésase unicamente no navegador e pérdese ao pechar ou recargar a páxina. O sitio non utiliza cookies, almacenamento local nin ferramentas de analítica ou publicidade.</p>
+      <p>Hai dous provedores técnicos que poden tratar datos de conexión. GitHub, Inc. aloxa o sitio mediante GitHub Pages e rexistra o enderezo IP dos visitantes por motivos de seguridade. Google proporciona a tipografía a través de Google Fonts e recibe o enderezo IP do navegador ao descargala. Eses tratamentos réxense polas políticas de privacidade de cada provedor.</p>
+      <h4 id="al-responsabilidad">Responsabilidade</h4>
+      <p>Os autores non responden das decisións que se adopten a partir do contido deste prototipo nin dos danos que puidesen derivar do seu uso. Para calquera trámite real, consulte a sede electrónica do organismo competente ou o teléfono 060 de información da Administración Xeral do Estado.</p>
+      <h4 id="al-contacto">Contacto</h4>
+      <p>Para calquera comunicación sobre este prototipo, incluídas as solicitudes de retirada de contidos, pode dirixirse aos seus autores a través do repositorio público do proxecto en GitHub (<a href="https://github.com/jaortsan/pld_pua" target="_blank" rel="noopener noreferrer">github.com/jaortsan/pld_pua</a>).</p>
+      <p class="al-act">Última actualización: 20 de outubro de 2026.</p>
     </div>
   </div>
 </div>
@@ -2551,6 +2605,28 @@ document.addEventListener('keydown', e => {
 /* Modal de Declaración de Accesibilidad (RD 1112/2018) */
 function abrirAccesibilidad() { document.getElementById('acc-overlay').classList.add('act'); }
 function cerrarAccesibilidad() { document.getElementById('acc-overlay').classList.remove('act'); }
+
+/* Aviso legal: apertura con foco gestionado y enlace directo por #aviso-legal */
+let alFocoPrevio = null;
+function abrirAvisoLegal(seccion) {
+  alFocoPrevio = document.activeElement;
+  const ov = document.getElementById('al-overlay');
+  ov.classList.add('act');
+  const destino = seccion ? document.getElementById(seccion) : null;
+  setTimeout(() => {
+    document.getElementById('al-cerrar').focus();
+    if (destino) destino.scrollIntoView({ block: 'start' });
+  }, 30);
+  return false;
+}
+function cerrarAvisoLegal() {
+  const ov = document.getElementById('al-overlay');
+  if (!ov || !ov.classList.contains('act')) return;
+  ov.classList.remove('act');
+  if (alFocoPrevio && alFocoPrevio.focus) alFocoPrevio.focus();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarAvisoLegal(); });
+if (location.hash === '#aviso-legal') abrirAvisoLegal();
 </script>
 </body>
 </html>
